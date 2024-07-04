@@ -2,6 +2,7 @@
 # App: Till - Passageiro: Mobilidade Urbana app do Passageiro
 # Author: Darivaldo Santos daridados@gmail.com
 # Date:   04/07/2024
+# Patrocinador: Cooperativa Coopta - https://coopta.coop.br/
 #================================================
 
 #Configurações necessarias
