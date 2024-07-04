@@ -1,4 +1,10 @@
-#configurações necessarias
+#================================================
+# App: Till - Passageiro: Mobilidade Urbana app do Passageiro
+# Author: Darivaldo Santos daridados@gmail.com
+# Date:   04/07/2024
+#================================================
+
+#Configurações necessarias
 
 1o.
 #node 12.22.12
