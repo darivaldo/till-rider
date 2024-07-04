@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Forma de pagamento</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="list-full-border" radio-group>
+        <ion-item>
+            <ion-label>
+                Dinheiro
+                <p class="text-hint">Dinheiro</p>
+            </ion-label>
+            <ion-radio value="cash" (click)="changeMethod('cash')"></ion-radio>
+        </ion-item>
+        <ion-item *ngIf="carNumber">
+            <ion-label>
+                Crédito
+                <p class="text-hint">{{ carNumber }}</p>
+            </ion-label>
+            <ion-radio value="card" (click)="changeMethod('card')"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding *ngIf="!carNumber">
+        <button ion-button block color="primary" (click)="addCard()">Adicionar cartão</button>
+    </div>
+</ion-content>

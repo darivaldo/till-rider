@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      "cordova-plugin-file@3.0.0",
+      "C:\\_Coopta\\till-rider"
+    ]
+  ],
+  "_development": true,
+  "_from": "cordova-plugin-file@3.0.0",
+  "_id": "cordova-plugin-file@3.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-P4c58dTpxXkKT5d3TFxFKg0rVe6izmBojOp5l59bEqE8YHBuW1ak20pl9jghjShLwdG04fR47JlhWF6XxH45eQ==",
+  "_location": "/cordova-plugin-file",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-file@3.0.0",
+    "name": "cordova-plugin-file",
+    "escapedName": "cordova-plugin-file",
+    "rawSpec": "3.0.0",
+    "saveSpec": null,
+    "fetchSpec": "3.0.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-file/-/cordova-plugin-file-3.0.0.tgz",
+  "_spec": "3.0.0",
+  "_where": "C:\\_Coopta\\till-rider",
+  "author": {
+    "name": "Apache Software Foundation"
+  },
+  "bugs": {
+    "url": "https://github.com/apache/cordova-plugin-file/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-file",
+    "platforms": [
+      "android",
+      "amazon-fireos",
+      "ubuntu",
+      "ios",
+      "wp7",
+      "wp8",
+      "blackberry10",
+      "windows8",
+      "windows",
+      "firefoxos"
+    ]
+  },
+  "description": "Cordova File Plugin",
+  "homepage": "https://github.com/apache/cordova-plugin-file#readme",
+  "keywords": [
+    "cordova",
+    "file",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-amazon-fireos",
+    "cordova-ubuntu",
+    "cordova-ios",
+    "cordova-wp7",
+    "cordova-wp8",
+    "cordova-blackberry10",
+    "cordova-windows8",
+    "cordova-windows",
+    "cordova-firefoxos"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-file",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apache/cordova-plugin-file.git"
+  },
+  "version": "3.0.0"
+}

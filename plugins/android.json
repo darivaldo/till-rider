@@ -1,0 +1,53 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-background-geolocation": {
+      "GOOGLE_PLAY_SERVICES_VERSION": "11+",
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
+      "ICON": "@mipmap/ic_launcher",
+      "SMALL_ICON": "@mipmap/ic_launcher",
+      "ACCOUNT_NAME": "@string/app_name",
+      "ACCOUNT_LABEL": "@string/app_name",
+      "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+      "CONTENT_AUTHORITY": "$PACKAGE_NAME",
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-uniquedeviceid": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    }
+  },
+  "dependent_plugins": {}
+}

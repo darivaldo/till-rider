@@ -1,0 +1,33 @@
+export class Afiliado {
+    public uid: string;
+    public id: string;
+    public codigo_afiliacao: string    ;
+    public tipo_afiliacao: string      ;
+    public primeiro_nome: string       ;
+    public segundo_nome: string        ;
+    public telefone: string            ;
+    public email: string               ;
+    public estado: string              ;
+    public pais: string                ;
+    public endereco: string             ;
+    public cidade: string;
+    public cep: string                 ;
+    public cpf: string                 ;
+    public indicacao_passageiro: string; 
+    public codigo_afiliacao_p: string     ;
+    public indicacao_motorista: string ;
+    public codigo_afiliacao_m: string     ;
+    public sexo: string                ;
+    public data_nascimento: string     ;
+    public data_criacao: string        ;
+    public pswd: string                ;
+    public active: string              ;
+    public activation_code: string     ;
+    public priv_admin: string          ;
+    public Tipo: string                ;
+    public tipo_franqueado: string     ;
+    public indicadorPor: string;
+    public foto: string     ;
+    public foto_rg_cnh: string     ;
+    public foto_comprovante: string     ;
+}

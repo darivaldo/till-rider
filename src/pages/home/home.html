@@ -1,0 +1,104 @@
+<ion-content>
+    <ion-fab vertical="top" horizontal="end" slot="fixed" style="margin-top:61px;margin-left:12px;width:94%">
+        <ion-list no-lines>
+            <ion-item style="padding-left:4px">
+                <ion-input style="border-radius: 5%; background-color:#9ff89c7c !important;" type="text" [(ngModel)]="keyword_origem" (ionChange)="search('origem')" autocorrect="off"
+                           placeholder="{{'Estou aqui'| translate}}" disabled>
+                </ion-input>
+            </ion-item>
+            <ion-item style="padding-left:4px">
+                <ion-input style="border-radius: 5%; background-color:#f7c55a !important;" type="text" [(ngModel)]="keyword_destino" (ionChange)="search('destino')" autocorrect="off"
+                           placeholder="{{'Eu Quero estar em...' | translate }}">
+                </ion-input>
+            </ion-item>
+        </ion-list>
+        <p style="text-align:center;color:#bbb" *ngIf="places.length==0"></p>
+        <ion-list [hidden]="not_show_list">
+            <ion-item *ngFor="let place of places" (click)="selectPlace(place)">
+                <ion-icon name="ios-pin-outline" item-left>
+                </ion-icon>
+                <span class="item-icon-label">
+            {{ calcDistance(place) }} km
+          </span>
+                <div>
+                    <div class="bold">{{ place.name }}</div>
+                    <span>{{ place.vicinity }}</span>
+                </div>
+            </ion-item>
+        </ion-list>
+        <button ion-fab hidden></button>
+    </ion-fab>
+
+    <div class="map-overlay">
+        <div style="top:0; right: 0; padding: 4px;">
+            <button class="profile" style="border-radius:10px;" ion-button menuToggle>
+                <ion-icon name="contact"></ion-icon>
+            </button>
+        </div>
+    </div>
+    <div id="{{ mapId }}" [ngStyle]="{height: '92%'}"></div>
+    <div class="align-bottom">
+        <ion-grid class="common-bg" [hidden]="!destination">
+            <ion-row>
+                <ion-col (click)="choosePaymentMethod()">
+                    <ion-icon name="ios-cash-outline" color="gray"></ion-icon>
+                    <span ion-text color="gray">{{ getPaymentMethod() }}</span>
+                </ion-col>
+                <ion-col (click)="showPromoPopup()" *ngIf="destination">
+                    <ion-icon name="ios-create-outline" color="gray"></ion-icon>
+                    <span ion-text color="gray">{{'PROMO' | translate}}</span>
+                </ion-col>
+                <ion-col (click)="showNotePopup()">
+                    <ion-icon name="ios-create-outline" color="gray"></ion-icon>
+                    <span ion-text color="gray">{{'NOTE' | translate}}</span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <!--
+        <ion-list no-lines>
+            <ion-item>
+                <ion-input disabled type="text" value="{{origin ? origin.vicinity : '' }}"></ion-input>
+                <button item-right (click)="chooseOrigin()">
+                    <ion-icon name="search" class="search-icon"></ion-icon>
+                </button>
+            </ion-item>
+            <ion-item>
+                <ion-input disabled type="text" placeholder="Para onde quero ir"
+                           value="{{ destination ? destination.vicinity : '' }}"></ion-input>
+                <button item-right (click)="chooseDestination()">
+                    <ion-icon name="search" class="search-icon"></ion-icon>
+                </button>
+            </ion-item>
+        </ion-list>
+        -->
+
+        <ion-row>
+            <ion-col *ngIf="distanceText!=''">
+                <ion-icon name="car"></ion-icon>
+                <b>{{ distanceText }}</b></ion-col>
+            <ion-col *ngIf="durationText!=''">
+                <ion-icon name="time"></ion-icon>
+                <b>{{durationText}}</b></ion-col>
+        </ion-row>
+        <ion-row [hidden]="!destination">
+            <ion-col *ngFor="let vehicle of vehicles; let i = index" [ngClass]="{'active': vehicle.active}"
+                     (click)="chooseVehicle(i)">
+                <!-- <img src="assets/img/icon/{{ vehicle.icon }}.svg"> -->
+                <img src="{{ vehicle.icon }}">
+                <p>{{ vehicle.name }}<br/>( {{currency }}{{ vehicle.fee | currency:"BRL":"symbol" }} )</p>
+            </ion-col>
+        </ion-row>
+
+        <button ion-button block class="primary" [hidden]="destination"
+                [disabled]="keyword_destino=='' ? true : false">{{'Solicitar Corrida' | translate}}</button>
+
+        <button ion-button block style="border-radius: 3%;background-color: #025f12 !important; " [hidden]="!destination"
+                (click)="book()">{{ locateDriver == false ? 'Solicitar Corrida' : 'Procurando por Motoristas Ativos' | translate }}
+            <ion-spinner id="spin1" name="dots" color="light" [hidden]="!locateDriver"></ion-spinner>
+        </button>
+        <button ion-button block  style="border-radius: 3%; background-color:#f75105 !important;"  [hidden]="!destination"
+                (click)="cancelTrip()">{{cancelDriver == false ? 'Cancelar solicitação': 'Cancelando a solicitação' | translate}}</button>
+                <ion-spinner id="spin2" name="dots" color="light" [hidden]="!cancelDriver"></ion-spinner>
+            </div>
+</ion-content>

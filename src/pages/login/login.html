@@ -1,0 +1,35 @@
+<ion-content class="bg-login">
+    <div class="auth-content">
+
+        <div class="light-bg">
+
+            <div padding text-center>
+                <div class="logo secondary-bg">
+                    <img src="assets/img/logo.png" height="120" />
+                    <h2 ion-text color="dark">{{'APP_NAME' | translate }}</h2>
+                </div>
+            </div>
+            <ion-list class="list-form" padding>
+                <ion-item>
+                    <ion-label stacked>{{'E-mail' | translate }}</ion-label>
+                    <ion-input placeholder="Informe o email" id="input" type="text" #input
+                        [(ngModel)]="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>{{'PASSWORD' | translate }}</ion-label>
+                    <ion-input placeholder="Informe a senha" type="password" [(ngModel)]="password"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <button ion-button clear item-right (click)="reset()" [disabled]="email.length == 0">{{'Esqueci
+                        a senha' | translate }}</button>
+                </ion-item>
+                <ion-item>
+                    <button style="border-radius: 3%;background-color: #025f12 !important; " padding ion-button block (click)="login()">{{'Entrar' | translate }}</button>
+                </ion-item>
+                <ion-item *ngIf="isRegisterEnabled">
+                    <button style="border-radius: 3%; background-color:#f75105 !important;" ion-button block (click)="signup()">{{'Criar Conta' | translate }}</button>
+                </ion-item>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

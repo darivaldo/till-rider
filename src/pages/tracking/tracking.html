@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title [ngSwitch]="tripService">
+        <span *ngIf="tripStatus == 'going'">{{ 'Em viagem' | translate}}</span>
+        <span *ngIf="tripStatus == 'waiting'">{{ 'Motorista a caminho' | translate}} - {{ duration }}</span>
+        <span *ngIf="tripStatus == 'finished'">{{ 'Corrida Finalizada' | translate}}</span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button *ngIf="tripStatus == 'finished'"  (click)="showRateCard()">{{'Avaliar' | translate}}</button>
+      <button ion-button *ngIf="tripStatus == 'waiting'" (click)="cancelTrip()">{{'Cancelar Corrida' | translate}}</button>
+      <a href="tel:{{sos}}" ion-button *ngIf="tripStatus == 'going'">{{'SOS' | translate}}</a>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div id="{{ mapId }}" [ngStyle]="{height: '85%'}"></div>
+  
+    <div class="align-bottom" >
+       
+        <ion-row>
+            <ion-col >
+                <ion-icon name="car"></ion-icon>
+                <b>{{ distanceText }}</b></ion-col>
+            <ion-col>
+                <ion-icon name="time"></ion-icon>
+                <b>{{durationText}}</b></ion-col>
+        </ion-row>
+
+        <button ion-button block color="danger" (click)="cancelTrip()">{{'Cancelar viagem' | translate}}</button>
+    </div>
+
+
+</ion-content>
+<ion-footer>
+    <div style="text-align: center;background:#FFC107; color: #222">{{ 'Código OTP' | translate}}: {{trip.otp}}</div>
+    <ion-item>
+      <ion-avatar item-left>
+          <img src="{{ driver_photo }}"/>
+      </ion-avatar>
+      <h2>{{ driver_name }} &nbsp; {{(driver)?.rating}} <ion-icon name="md-star" color="yellow"></ion-icon> </h2>
+      <p>{{ (driver)?.plate }} &middot; {{ (driver)?.brand }} - {{ (driver)?.model }} - {{ (driver)?.color }}</p>
+      <a item-right ion-button clear href="tel: {{ (driver)?.phoneNumber }} ">
+        <ion-icon name="call"></ion-icon>&nbsp;{{'Ligar' | translate}}
+      </a>
+    </ion-item>
+</ion-footer>
