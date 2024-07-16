@@ -1,5 +1,5 @@
 #================================================
-# App: Till - Passageiro: Mobilidade Urbana app do Passageiro
+# App: Dado - Passageiro: Mobilidade Urbana app do Passageiro
 # Author: Darivaldo Santos daridados@gmail.com
 # Date:   04/07/2024
 # Patrocinador: Cooperativa Coopta - https://coopta.coop.br/
@@ -26,5 +26,5 @@ npm i --legacy-peers-deps --force
 
 
 # APENAS INSTALAR
-adb.exe install -r C:\_Coopta\till-rider\platforms\android\app\build\outputs\apk\debug\app-debug.apk
+adb.exe install -r C:\_Coopta\dado-rider\platforms\android\app\build\outputs\apk\debug\app-debug.apk
 

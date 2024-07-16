@@ -2,12 +2,12 @@
     <ion-fab vertical="top" horizontal="end" slot="fixed" style="margin-top:61px;margin-left:12px;width:94%">
         <ion-list no-lines>
             <ion-item style="padding-left:4px">
-                <ion-input style="border-radius: 5%; background-color:#9ff89c7c !important;" type="text" [(ngModel)]="keyword_origem" (ionChange)="search('origem')" autocorrect="off"
+                <ion-input style="border-radius: 5%; background-color:#f3abab !important;" type="text" [(ngModel)]="keyword_origem" (ionChange)="search('origem')" autocorrect="off"
                            placeholder="{{'Estou aqui'| translate}}" disabled>
                 </ion-input>
             </ion-item>
             <ion-item style="padding-left:4px">
-                <ion-input style="border-radius: 5%; background-color:#f7c55a !important;" type="text" [(ngModel)]="keyword_destino" (ionChange)="search('destino')" autocorrect="off"
+                <ion-input style="border-radius: 5%; background-color:#faf286 !important;" type="text" [(ngModel)]="keyword_destino" (ionChange)="search('destino')" autocorrect="off"
                            placeholder="{{'Eu Quero estar em...' | translate }}">
                 </ion-input>
             </ion-item>
@@ -93,11 +93,11 @@
         <button ion-button block class="primary" [hidden]="destination"
                 [disabled]="keyword_destino=='' ? true : false">{{'Solicitar Corrida' | translate}}</button>
 
-        <button ion-button block style="border-radius: 3%;background-color: #025f12 !important; " [hidden]="!destination"
+        <button ion-button block style="border-radius: 3%;font-weight:bold; color:#f50606  !important; background-color:#fceb05 !important;" [hidden]="!destination"
                 (click)="book()">{{ locateDriver == false ? 'Solicitar Corrida' : 'Procurando por Motoristas Ativos' | translate }}
             <ion-spinner id="spin1" name="dots" color="light" [hidden]="!locateDriver"></ion-spinner>
         </button>
-        <button ion-button block  style="border-radius: 3%; background-color:#f75105 !important;"  [hidden]="!destination"
+        <button ion-button block  style="border-radius: 3%;color:#fceb05 !important; background-color: #f70505 !important; "  [hidden]="!destination"
                 (click)="cancelTrip()">{{cancelDriver == false ? 'Cancelar solicitação': 'Cancelando a solicitação' | translate}}</button>
                 <ion-spinner id="spin2" name="dots" color="light" [hidden]="!cancelDriver"></ion-spinner>
             </div>

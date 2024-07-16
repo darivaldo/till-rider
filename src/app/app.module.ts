@@ -43,7 +43,7 @@ import {IndicacaoPage} from "../pages/indicacao/indicacao";
 import {BrMaskerModule} from 'brmasker-ionic-3';
 import {BankService} from "../services/bank-service";
 import {CepProvider} from '../providers/cep/cep';
-import {CadastroTillProvider} from '../providers/cadastro-till/cadastro-till';
+import {CadastroDadoProvider} from '../providers/cadastro-dado/cadastro-dado';
 import {Camera} from '@ionic-native/camera';
 import {File} from "@ionic-native/file/ngx";
 import {TermosPage} from "../pages/termos/termos";
@@ -149,7 +149,7 @@ export const firebaseConfig = {
         ComponentsModule,
         CepProvider,
         BankService,
-        CadastroTillProvider,
+        CadastroDadoProvider,
         PrizeService,
     ]
 })

@@ -15,7 +15,7 @@ import 'rxjs/add/operator/take';
 
 import {CepProvider} from "../../providers/cep/cep";
 import {BankService} from "../../services/bank-service";
-import { CadastroTillProvider } from "../../providers/cadastro-till/cadastro-till";
+import { CadastroDadoProvider } from "../../providers/cadastro-dado/cadastro-dado";
 
 import * as firebase from 'firebase/app';
 
@@ -43,7 +43,7 @@ export class UserPage {
                 public camera: Camera, private cepProvider: CepProvider, public bankService: BankService,
                 public alertCtrl: AlertController, public toastCtrl: ToastController,
                 public loadingCtrl: LoadingController, public platform: Platform,
-                public till: CadastroTillProvider,
+                public dado: CadastroDadoProvider,
                 public tripService: TripService, public translate: TranslateService){
 
         this.translate.setDefaultLang('pt-br');
@@ -106,7 +106,7 @@ export class UserPage {
     // save user info
     save() {
         this.user.isPhoneVerified = this.isPhoneVerified;
-        this.till.save(this.user);
+        this.dado.save(this.user);
         this.authService.updateUserProfile(this.user);
         this.nav.pop();
         this.displayToast("Perfil atualizado");

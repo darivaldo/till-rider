@@ -1,5 +1,5 @@
 import { VehiclesDto } from '../../Dto/VehiclesDto';
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController, LoadingController, NavController, NavParams, ToastController, Platform } from 'ionic-angular';
 
 import 'rxjs/Rx'
@@ -116,7 +116,7 @@ export class HomePage {
     public driverStatus: string = null;
 
     constructor(public nav: NavController, public platform: Platform, public alertCtrl: AlertController,
-        public placeService: PlaceService, private geolocation: Geolocation, private chRef: ChangeDetectorRef,
+        public placeService: PlaceService, private geolocation: Geolocation, 
         public loadingCtrl: LoadingController, public settingService: SettingService,
         public tripService: TripService, public driverService: DriverService,
         public afAuth: AngularFireAuth,
@@ -226,7 +226,7 @@ export class HomePage {
     presentConfirm() {
         let alert = this.alertCtrl.create({
             title: 'Confirmação',
-            message: 'Deseja realmente sair do Till Passageiro?',
+            message: 'Deseja realmente sair do Dado Passageiro?',
             buttons: [
                 {
                     text: 'Não',

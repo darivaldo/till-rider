@@ -4,7 +4,7 @@ import {AngularFireAuth} from "@angular/fire/auth";
 import {AngularFireDatabase} from "@angular/fire/database";
 import {RegisterPage} from "../register/register";
 import {LoginPage} from "../login/login";
-import {CadastroTillProvider} from "../../providers/cadastro-till/cadastro-till";
+import {CadastroDadoProvider} from "../../providers/cadastro-dado/cadastro-dado";
 
 @IonicPage()
 @Component({
@@ -24,7 +24,7 @@ export class IndicacaoPage implements OnInit{
     constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
                 public afAuth: AngularFireAuth, public db: AngularFireDatabase,  
                 public toast: ToastController, public alertCtrl: AlertController,
-                public platform:Platform, public till: CadastroTillProvider) {
+                public platform:Platform, public dado: CadastroDadoProvider) {
 
                     this.indicadoPor = this.navParams.get('indicadoPor');
     }
@@ -60,7 +60,7 @@ export class IndicacaoPage implements OnInit{
         let loading = this.loadingCtrl.create({content: 'Verificando...'});
         loading.present();
 
-        this.till.verifyAffiliateCode(this.minhaIndicacao)
+        this.dado.verifyAffiliateCode(this.minhaIndicacao)
             .then( result => {
                 if (result[0].qtd == '1'){
                     let alert = this.alertCtrl.create({
@@ -139,7 +139,7 @@ export class IndicacaoPage implements OnInit{
             let loading = this.loadingCtrl.create({content: 'Procurando...'});
             loading.present();
             this.mostraIndicacao = false;
-            this.till.searchAffiliateByCode(this.indicacao)
+            this.dado.searchAffiliateByCode(this.indicacao)
                 .then(result => {
                     let indicadoPor = result;
 

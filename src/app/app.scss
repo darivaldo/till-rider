@@ -13,7 +13,7 @@
 }
 
 .header{
-  background: color($colors, till)
+  background: color($colors, dado)
 }
 
 .light-bg {
@@ -136,7 +136,7 @@ a {
 }
 
 .alertcss{
-  background: color($colors, till);
+  background: color($colors, dado);
 }
 
 .alertcss .alert-head{
@@ -183,13 +183,13 @@ a {
   padding: 10px 30px !important;
 }
 
-.text-till{
+.text-dado{
   width: 100%;
   padding: 10px 15px;
 }
 
 
-.text-till{
+.text-dado{
   width: 100%;
   padding: 10px 15px;
 }
@@ -198,8 +198,8 @@ a {
   color: #fff;
 }
 
-.text-till{
-  color: color($colors, 'till');
+.text-dado{
+  color: color($colors, 'dado');
 }
 
 .text-center{
@@ -401,8 +401,8 @@ ion-navbar.no-border {
     background-color: #68C91F;
   }
 
-  .till-txt {
-    color: color($colors, 'till');
+  .dado-txt {
+    color: color($colors, 'dado');
   }
 }
 

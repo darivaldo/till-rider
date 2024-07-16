@@ -1,8 +1,8 @@
 {
-  "name": "till-rider",
+  "name": "dado-rider",
   "version": "1.0.0",
-  "author": "Till",
-  "homepage": "http://till.com.br",
+  "author": "Dado",
+  "homepage": "http://dado.com.br",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -94,7 +94,7 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "Till Passageiros",
+  "description": "Dado Passageiros",
   "cordova": {
     "plugins": {
       "cordova-plugin-console": {},

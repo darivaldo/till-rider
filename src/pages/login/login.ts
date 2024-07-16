@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 import { ENABLE_SIGNUP } from '../../services/constants';
 import { TranslateService } from '@ngx-translate/core';
 import { IndicacaoPage } from "../indicacao/indicacao";
-import { CadastroTillProvider } from "../../providers/cadastro-till/cadastro-till";
+import { CadastroDadoProvider } from "../../providers/cadastro-dado/cadastro-dado";
 import { Afiliado } from '../../Dto/AfiliadoDto';
 
 @Component({
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit{
         public authService: AuthService, public alertCtrl: AlertController,
         public loadingCtrl: LoadingController, public toast: ToastController,
         public keyboard: Keyboard,public translate: TranslateService,
-        public till: CadastroTillProvider) {
+        public dado: CadastroDadoProvider) {
         this.isRegisterEnabled = ENABLE_SIGNUP;
         this.translate.setDefaultLang('pt-br');
 
@@ -82,7 +82,7 @@ export class LoginPage implements OnInit{
     presentConfirm() {
         let alert = this.alertCtrl.create({
           title: 'Confirmação',
-          message: 'Deseja realmente sair do Till Passageiro?',
+          message: 'Deseja realmente sair do Dado Passageiro?',
           buttons: [
             {
               text: 'Não',
@@ -108,7 +108,7 @@ export class LoginPage implements OnInit{
 
 
     signup() {
-        this.alertCtrl.create({subTitle: 'Demonstração App Till', buttons: ['ok']}).present();
+        this.alertCtrl.create({subTitle: 'Demonstração App Dado', buttons: ['ok']}).present();
         //this.nav.setRoot(RegisterPage);
         this.nav.setRoot(RegisterPage, {'minhaIndicacao': "0001", 'indicadoPor': "9999", 'origin':'new'})
 
@@ -128,7 +128,7 @@ export class LoginPage implements OnInit{
   
     // login() {
     //     let msg = "";
-    //     let verifyTill = false;
+    //     let verifyDado = false;
 
     //     if (this.email.length == 0 || this.password.length == 0) {
     //         this.alertCtrl.create({ subTitle: 'Dados inválidos', buttons: ['ok'] }).present();
@@ -136,7 +136,7 @@ export class LoginPage implements OnInit{
     //         let loading = this.loadingCtrl.create({ content: 'Fazendo login...' });
     //         loading.present();
 
-    //         this.till.login(this.email, this.password).then(authData => {
+    //         this.dado.login(this.email, this.password).then(authData => {
 
     //             let afiliado = <Afiliado>JSON.parse(localStorage.getItem('User'));
 
@@ -223,7 +223,7 @@ export class LoginPage implements OnInit{
     // switch (error.code) {
     //     case 'auth/user-not-found':
     //         msg = "Usuário não encontrado.";
-    //         //verifyTill = true;
+    //         //verifyDado = true;
     //         break;
     //     case 'auth/wrong-password':
     //         msg = "Senha incorreta. Por favor, tente novamente.";
@@ -232,7 +232,7 @@ export class LoginPage implements OnInit{
     //         msg = "Ocorreu um erro no login. Por favor, tente novamente.";
     //         break;
     // }
-    // if (!verifyTill) {
+    // if (!verifyDado) {
     //     let alert = this.alertCtrl.create({
     //         message: msg,
     //         buttons: ['OK']
@@ -240,7 +240,7 @@ export class LoginPage implements OnInit{
     //     alert.present();
     // }
     // else {
-    //     this.till.searchByEmail(this.email)
+    //     this.dado.searchByEmail(this.email)
     //         .then(result => {
     //             if (result) {
     //                 this.nav.push(RegisterPage, { 'snapshot': result[0], 'origin': 'login' });
@@ -272,7 +272,7 @@ export class LoginPage implements OnInit{
 
     login() {
         let msg = "";
-        let verifyTill = false;
+        let verifyDado = false;
 
         if (this.email.length == 0 || this.password.length == 0) {
             this.alertCtrl.create({subTitle: "Por favor, Informe:<br><b>Email</b> e<br> <b>Senha</b>", buttons: ['ok']}).present();
@@ -288,7 +288,7 @@ export class LoginPage implements OnInit{
 
                 this.user = this.authService.getUserData();
 
-                this.till.login(this.email, this.password).then((response:any) => {
+                this.dado.login(this.email, this.password).then((response:any) => {
 
                     //snapshot.uid = snapshot.$key;
                     if (response) {
@@ -313,7 +313,7 @@ export class LoginPage implements OnInit{
     
                 }, (error: any) => {
                     loading.dismiss();
-                    console.log("this.till.login========================",error);
+                    console.log("this.dado.login========================",error);
                     let alert = this.alertCtrl.create({
                         message: "Ocorreu um erro no login. Por favor, tente novamente.",
                         buttons: ['OK']
@@ -336,7 +336,7 @@ export class LoginPage implements OnInit{
                         msg = "Ocorreu um erro no login. Por favor, tente novamente.";
                         break;
                 }
-                if (!verifyTill){
+                if (!verifyDado){
                     let alert = this.alertCtrl.create({
                         message: msg,
                         buttons: ['OK']
@@ -345,7 +345,7 @@ export class LoginPage implements OnInit{
                 }
                 else{
 
-                    // this.till.searchByEmail(this.email)
+                    // this.dado.searchByEmail(this.email)
                     //     .then( result => {
                     //         if (result){
                     //             this.nav.push(RegisterPage, {'snapshot': result[0], 'origin':'login'});

@@ -105,7 +105,7 @@ export class TrackingPage {
     presentConfirm() {
         let alert = this.alertCtrl.create({
             title: 'Confirmação',
-            message: 'Deseja realmente sair do Till Passageiro?',
+            message: 'Deseja realmente sair do Dado Passageiro?',
             buttons: [
                 {
                     text: 'Não',
@@ -185,7 +185,7 @@ export class TrackingPage {
                  country: 'BR',
                  currency: 'brl',
                  total: {
-                     label: 'Corrida na Till #'+tripId,
+                     label: 'Corrida na Dado #'+tripId,
                      amount: final,
                  },
                  requestPayerName: true,
@@ -238,7 +238,7 @@ export class TrackingPage {
             '<br> Desconto (%): ' + this.trip.discount +
             '<br/>Método de  pagamento: ' + (this.trip.paymentMethod == 'cash' ? 'Dinheiro' : 'Cartão') +
             '</p><h2>' + this.trip.currency + ' ' + final + '</h2>' +
-            '<h2>Obrigado por usar a Till!</h2>';
+            '<h2>Obrigado por usar a Dado!</h2>';
         this.alertCtrl.create({
             title: 'Corrida Finalizada!',
             message: message,

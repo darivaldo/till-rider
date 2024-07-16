@@ -7,28 +7,7 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "till.rider.com.br"
-    },
-    "cordova-plugin-geolocation": {
+    "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "till.rider.com.br"
     },
     "cordova-plugin-background-geolocation": {
@@ -42,10 +21,31 @@
       "CONTENT_AUTHORITY": "$PACKAGE_NAME",
       "PACKAGE_NAME": "till.rider.com.br"
     },
-    "cordova-plugin-android-permissions": {
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "till.rider.com.br"
     },
     "cordova-plugin-uniquedeviceid": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "till.rider.com.br"
+    },
+    "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "till.rider.com.br"
     }
   },
